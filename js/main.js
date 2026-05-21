@@ -186,35 +186,35 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
       num: '01', title: 'Обслуживание и ремонт автономных канализаций',
       desc: 'Плановое сервисное обслуживание, диагностика и ремонт септиков всех марок: компрессоры, поплавки, эрлифты, замена расходников.',
       items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
-      img: 'https://images.unsplash.com/photo-1676210134190-3f2c0d5cf58d?w=720&h=540&fit=crop&auto=format',
+      img: 'https://images.pexels.com/photos/8488035/pexels-photo-8488035.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
       iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
     },
     {
       num: '02', title: 'Дренажные работы',
       desc: 'Проектирование и монтаж дренажных систем, отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
       items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
-      img: 'https://images.unsplash.com/photo-1768321916212-17ae334a3d63?w=720&h=540&fit=crop&auto=format',
+      img: 'https://images.pexels.com/photos/37627673/pexels-photo-37627673.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
       iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
     },
     {
       num: '03', title: 'Водоподведение к дому',
       desc: 'Прокладка водопровода от скважины или магистрали, подключение к дому, монтаж насосного оборудования и системы фильтрации.',
       items: ['Утеплённая магистраль', 'Гидроаккумулятор и автоматика', 'Подключение фильтров'],
-      img: 'https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=720&h=540&fit=crop&auto=format',
+      img: 'https://images.pexels.com/photos/4494656/pexels-photo-4494656.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
       iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
     },
     {
       num: '04', title: 'Отопление дома',
       desc: 'Проектирование и монтаж систем отопления: газовые и электрические котлы, радиаторы, тёплый пол, обвязка котельной.',
       items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
-      img: 'https://images.unsplash.com/photo-1759148414485-5f624fe9d1ea?w=720&h=540&fit=crop&auto=format',
+      img: 'https://images.pexels.com/photos/9551366/pexels-photo-9551366.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
       iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
     },
     {
       num: '05', title: 'Бурение и обустройство скважин',
       desc: 'Бурение на песок и известняк, обустройство кессона, монтаж погружного насоса, пуско-наладка и анализ воды.',
       items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
-      img: 'https://images.unsplash.com/photo-1776196463688-5f21c9632c75?w=720&h=540&fit=crop&auto=format',
+      img: 'https://images.pexels.com/photos/14840752/pexels-photo-14840752.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
       iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
     },
   ];
@@ -253,14 +253,14 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const BRANDS = [
-    { name: 'Топас 5',        people: '5 чел', power: '1 кВт·ч/сут',      deep: '2.5 м', from: 109900, hit: true,  img: 'https://images.unsplash.com/photo-1694674818352-f6061a0561a1?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Юнилос Астра 5', people: '5 чел', power: '0.8 кВт·ч/сут',    deep: '2.4 м', from: 98500,  hit: false, img: 'https://images.unsplash.com/photo-1773517460230-15928a2adc4e?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Евробион 5',     people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.6 м', from: 104000, hit: false, img: 'https://images.unsplash.com/photo-1650551182991-b07558247564?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Тверь 0.5',      people: '3 чел', power: '0.6 кВт·ч/сут',    deep: '2.2 м', from: 87900,  hit: false, img: 'https://images.unsplash.com/photo-1773517459405-67adee847117?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Тополь 6',       people: '6 чел', power: '1.1 кВт·ч/сут',    deep: '2.6 м', from: 118500, hit: false, img: 'https://images.unsplash.com/photo-1773517458906-b2c7c94ad5b2?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Танк Универсал', people: '4 чел', power: 'энергонезависимый', deep: '2.4 м', from: 73900,  hit: true,  img: 'https://images.unsplash.com/photo-1776196463688-5f21c9632c75?w=720&h=540&fit=crop&auto=format' },
-    { name: 'Дека СБО',       people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.5 м', from: 99200,  hit: false, img: 'https://images.unsplash.com/photo-1768321916212-17ae334a3d63?w=720&h=540&fit=crop&auto=format' },
-    { name: 'BioDeka 5',      people: '5 чел', power: '0.85 кВт·ч/сут',   deep: '2.4 м', from: 105800, hit: false, img: 'https://images.unsplash.com/photo-1759148414485-5f624fe9d1ea?w=720&h=540&fit=crop&auto=format' },
+    { name: 'Топас 5',        people: '5 чел', power: '1 кВт·ч/сут',      deep: '2.5 м', from: 109900, hit: true,  img: 'https://images.pexels.com/photos/17048866/pexels-photo-17048866.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Юнилос Астра 5', people: '5 чел', power: '0.8 кВт·ч/сут',    deep: '2.4 м', from: 98500,  hit: false, img: 'https://images.pexels.com/photos/30147821/pexels-photo-30147821.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Евробион 5',     people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.6 м', from: 104000, hit: false, img: 'https://images.pexels.com/photos/37627672/pexels-photo-37627672.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Тверь 0.5',      people: '3 чел', power: '0.6 кВт·ч/сут',    deep: '2.2 м', from: 87900,  hit: false, img: 'https://images.pexels.com/photos/17375718/pexels-photo-17375718.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Тополь 6',       people: '6 чел', power: '1.1 кВт·ч/сут',    deep: '2.6 м', from: 118500, hit: false, img: 'https://images.pexels.com/photos/2310904/pexels-photo-2310904.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Танк Универсал', people: '4 чел', power: 'энергонезависимый', deep: '2.4 м', from: 73900,  hit: true,  img: 'https://images.pexels.com/photos/20143720/pexels-photo-20143720.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Дека СБО',       people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.5 м', from: 99200,  hit: false, img: 'https://images.pexels.com/photos/4494653/pexels-photo-4494653.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'BioDeka 5',      people: '5 чел', power: '0.85 кВт·ч/сут',   deep: '2.4 м', from: 105800, hit: false, img: 'https://images.pexels.com/photos/8581897/pexels-photo-8581897.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
   ];
 
   const fmt = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -384,7 +384,7 @@ function maskPhone(raw) {
           <div class="ok">${checkSvg(32)}</div>
           <h3>Заявка принята</h3>
           <p>Инженер свяжется в течение 15 минут и подготовит детальный расчёт.</p>
-          <button class="link" id="calcReset" style="margin-top:24px;color:#fff;border-color:rgba(255,255,255,.4)">Заполнить ещё раз</button>
+          <button id="calcReset" class="calc-reset-btn">Заполнить ещё раз</button>
         </div>`;
     } else if (state.step < STEPS.length) {
       const s = STEPS[state.step];

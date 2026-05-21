@@ -1138,6 +1138,25 @@ section.tight {
   cursor: not-allowed;
 }
 
+.calc-reset-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.7);
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.calc-reset-btn:hover {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border-color: rgba(255,255,255,.45);
+}
+
 .calc-success {
   flex: 1;
   display: grid;
