@@ -186,35 +186,35 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
       num: '01', title: 'Обслуживание и ремонт автономных канализаций',
       desc: 'Плановое сервисное обслуживание, диагностика и ремонт септиков всех марок: компрессоры, поплавки, эрлифты, замена расходников.',
       items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
-      img: 'https://images.pexels.com/photos/8488035/pexels-photo-8488035.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Cast-iron_plumbing_pipe.jpg',
       iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
     },
     {
       num: '02', title: 'Дренажные работы',
       desc: 'Проектирование и монтаж дренажных систем, отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
       items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
-      img: 'https://images.pexels.com/photos/37627673/pexels-photo-37627673.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Drainage_Ditch_in_Fox_River_Grove%2C_Illinois.jpg',
       iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
     },
     {
       num: '03', title: 'Водоподведение к дому',
       desc: 'Прокладка водопровода от скважины или магистрали, подключение к дому, монтаж насосного оборудования и системы фильтрации.',
       items: ['Утеплённая магистраль', 'Гидроаккумулятор и автоматика', 'Подключение фильтров'],
-      img: 'https://images.pexels.com/photos/4494656/pexels-photo-4494656.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/2/27/Hand_Under_Outdoor_Water_Spigot_-_NIAID.jpg',
       iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
     },
     {
       num: '04', title: 'Отопление дома',
       desc: 'Проектирование и монтаж систем отопления: газовые и электрические котлы, радиаторы, тёплый пол, обвязка котельной.',
       items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
-      img: 'https://images.pexels.com/photos/9551366/pexels-photo-9551366.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Japanese_Electric_Water_Heater.jpg',
       iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
     },
     {
       num: '05', title: 'Бурение и обустройство скважин',
       desc: 'Бурение на песок и известняк, обустройство кессона, монтаж погружного насоса, пуско-наладка и анализ воды.',
       items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
-      img: 'https://images.pexels.com/photos/14840752/pexels-photo-14840752.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Drilling_for_water.jpg',
       iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
     },
   ];
@@ -253,14 +253,14 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const BRANDS = [
-    { name: 'Топас 5',        people: '5 чел', power: '1 кВт·ч/сут',      deep: '2.5 м', from: 109900, hit: true,  img: 'https://images.pexels.com/photos/17048866/pexels-photo-17048866.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Юнилос Астра 5', people: '5 чел', power: '0.8 кВт·ч/сут',    deep: '2.4 м', from: 98500,  hit: false, img: 'https://images.pexels.com/photos/30147821/pexels-photo-30147821.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Евробион 5',     people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.6 м', from: 104000, hit: false, img: 'https://images.pexels.com/photos/37627672/pexels-photo-37627672.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Тверь 0.5',      people: '3 чел', power: '0.6 кВт·ч/сут',    deep: '2.2 м', from: 87900,  hit: false, img: 'https://images.pexels.com/photos/17375718/pexels-photo-17375718.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Тополь 6',       people: '6 чел', power: '1.1 кВт·ч/сут',    deep: '2.6 м', from: 118500, hit: false, img: 'https://images.pexels.com/photos/2310904/pexels-photo-2310904.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Танк Универсал', people: '4 чел', power: 'энергонезависимый', deep: '2.4 м', from: 73900,  hit: true,  img: 'https://images.pexels.com/photos/20143720/pexels-photo-20143720.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'Дека СБО',       people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.5 м', from: 99200,  hit: false, img: 'https://images.pexels.com/photos/4494653/pexels-photo-4494653.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
-    { name: 'BioDeka 5',      people: '5 чел', power: '0.85 кВт·ч/сут',   deep: '2.4 м', from: 105800, hit: false, img: 'https://images.pexels.com/photos/8581897/pexels-photo-8581897.jpeg?auto=compress&cs=tinysrgb&w=720&h=540&fit=crop' },
+    { name: 'Топас 5',        people: '5 чел', power: '1 кВт·ч/сут',      deep: '2.5 м', from: 109900, hit: true,  img: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Cabin_in_the_woods_%2842635966932%29.jpg' },
+    { name: 'Юнилос Астра 5', people: '5 чел', power: '0.8 кВт·ч/сут',    deep: '2.4 м', from: 98500,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Garden_with_apples_in_Kosa.jpg' },
+    { name: 'Евробион 5',     people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.6 м', from: 104000, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Onshore_drilling_rig.jpg' },
+    { name: 'Тверь 0.5',      people: '3 чел', power: '0.6 кВт·ч/сут',    deep: '2.2 м', from: 87900,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Russian_izba_house.JPG' },
+    { name: 'Тополь 6',       people: '6 чел', power: '1.1 кВт·ч/сут',    deep: '2.6 м', from: 118500, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/4/40/House_and_yard_near_Mokry_Chaltyr_River.jpg' },
+    { name: 'Танк Универсал', people: '4 чел', power: 'энергонезависимый', deep: '2.4 м', from: 73900,  hit: true,  img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Drilling_for_water.jpg' },
+    { name: 'Дека СБО',       people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.5 м', from: 99200,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Drainage_Ditch_in_Fox_River_Grove%2C_Illinois.jpg' },
+    { name: 'BioDeka 5',      people: '5 чел', power: '0.85 кВт·ч/сут',   deep: '2.4 м', from: 105800, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Cast-iron_plumbing_pipe.jpg' },
   ];
 
   const fmt = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
