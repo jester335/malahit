@@ -183,36 +183,36 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
 
   const SERVICES = [
     {
-      num: '01', title: 'Обслуживание и ремонт автономных канализаций',
-      desc: 'Плановое сервисное обслуживание, диагностика и ремонт септиков всех марок: компрессоры, поплавки, эрлифты, замена расходников.',
+      num: '01', title: 'Ремонт и обслуживание септиков',
+      desc: 'Диагностика и ремонт септиков всех марок: компрессоры, эрлифты, поплавки. Выезд в день обращения.',
       items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
       img: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Cast-iron_plumbing_pipe.jpg',
       iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
     },
     {
       num: '02', title: 'Дренажные работы',
-      desc: 'Проектирование и монтаж дренажных систем, отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
+      desc: 'Отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
       items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
       img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Drainage_Ditch_in_Fox_River_Grove%2C_Illinois.jpg',
       iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
     },
     {
       num: '03', title: 'Водоподведение к дому',
-      desc: 'Прокладка водопровода от скважины или магистрали, подключение к дому, монтаж насосного оборудования и системы фильтрации.',
+      desc: 'Водопровод от скважины до дома, насосное оборудование и фильтрация под ключ.',
       items: ['Утеплённая магистраль', 'Гидроаккумулятор и автоматика', 'Подключение фильтров'],
       img: 'https://upload.wikimedia.org/wikipedia/commons/2/27/Hand_Under_Outdoor_Water_Spigot_-_NIAID.jpg',
       iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
     },
     {
       num: '04', title: 'Отопление дома',
-      desc: 'Проектирование и монтаж систем отопления: газовые и электрические котлы, радиаторы, тёплый пол, обвязка котельной.',
+      desc: 'Газовые и электрические котлы, радиаторы, тёплый пол — проектирование и монтаж.',
       items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
       img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Japanese_Electric_Water_Heater.jpg',
       iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
     },
     {
       num: '05', title: 'Бурение и обустройство скважин',
-      desc: 'Бурение на песок и известняк, обустройство кессона, монтаж погружного насоса, пуско-наладка и анализ воды.',
+      desc: 'Бурение от 20 до 200 м, кессон, погружной насос, пуско-наладка. Анализ воды в подарок.',
       items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
       img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Drilling_for_water.jpg',
       iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
@@ -232,8 +232,6 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
       </div>
       <div class="svc-body">
         <h3 class="h-3">${s.title}</h3>
-        <p>${s.desc}</p>
-        <ul>${s.items.map((it) => `<li>${it}</li>`).join('')}</ul>
         <button class="svc-cta" data-modal="contact">Отправить заявку ${arrowSvg}</button>
       </div>
     </article>
@@ -397,10 +395,7 @@ function maskPhone(raw) {
               const sel = state.answers[s.key] === opt.v;
               return `<button class="calc-opt${sel ? ' is-selected' : ''}" data-key="${s.key}" data-val="${opt.v}">
                 <span class="ico-l">${icoSvg(opt.ico)}</span>
-                <span style="flex:1;min-width:0">
-                  <span style="display:block;font-weight:600">${opt.l}</span>
-                  <span style="display:block;font-size:12px;opacity:.7;font-weight:400;margin-top:2px">${opt.d}</span>
-                </span>
+                <span style="flex:1;min-width:0;font-weight:600">${opt.l}</span>
                 <span class="check-r">${sel ? checkSvg(12) : ''}</span>
               </button>`;
             }).join('')}
@@ -420,7 +415,7 @@ function maskPhone(raw) {
         <form class="calc-form calc-step-anim" id="calcForm">
           <div class="calc-step-label">Шаг ${total} / ${total} · последний</div>
           <h3 class="calc-q">Получите персональное предложение</h3>
-          <p style="margin:-12px 0 8px;color:rgba(255,255,255,.65);font-size:14px">В течение 15 минут вышлем расчёт по выбранным параметрам в SMS или Telegram.</p>
+          <p style="margin:-12px 0 8px;color:rgba(255,255,255,.65);font-size:14px">Оставьте ваши контакты и в течение 15 минут свяжемся с вами.</p>
           <div class="summary">${answerLabels()}</div>
           <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="calcName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
           <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="calcPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
@@ -539,7 +534,7 @@ function maskPhone(raw) {
         <div class="form-head">
           <span class="calc-step-label">Форма заявки</span>
           <h3 class="calc-q" style="margin-top:8px">Оставьте заявку</h3>
-          <p style="margin:0;color:rgba(255,255,255,.65);font-size:14px">Перезвоним в течение 15 минут, подберём решение и&nbsp;бесплатно выедем на замер.</p>
+          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут, подберём решение и&nbsp;бесплатно выедем на замер.</p>
         </div>
         <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="ctName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
         <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="ctPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
@@ -651,7 +646,7 @@ function maskPhone(raw) {
         <div class="form-head">
           <span class="calc-step-label">Форма заявки</span>
           <h3 class="calc-q" style="margin-top:8px">Оставьте заявку</h3>
-          <p style="margin:0;color:rgba(255,255,255,.65);font-size:14px">Перезвоним в течение 15 минут и&nbsp;бесплатно выедем на&nbsp;замер.</p>
+          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут и&nbsp;бесплатно выедем на&nbsp;замер.</p>
         </div>
         <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="mName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
         <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="mPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
