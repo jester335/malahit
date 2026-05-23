@@ -183,39 +183,39 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
 
   const SERVICES = [
     {
-      num: '01', title: 'Ремонт и обслуживание септиков',
-      desc: 'Диагностика и ремонт септиков всех марок: компрессоры, эрлифты, поплавки. Выезд в день обращения.',
-      items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Cast-iron_plumbing_pipe.jpg',
-      iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
-    },
-    {
-      num: '02', title: 'Дренажные работы',
-      desc: 'Отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
-      items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Drainage_Ditch_in_Fox_River_Grove%2C_Illinois.jpg',
-      iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
-    },
-    {
-      num: '03', title: 'Водоподведение к дому',
-      desc: 'Водопровод от скважины до дома, насосное оборудование и фильтрация под ключ.',
-      items: ['Утеплённая магистраль', 'Гидроаккумулятор и автоматика', 'Подключение фильтров'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/2/27/Hand_Under_Outdoor_Water_Spigot_-_NIAID.jpg',
+      num: '01', title: 'Бурение скважин/подведение в дом',
+      desc: 'Бурение от 20 до 200 м, кессон, насос и водопровод до дома под ключ. Анализ воды в подарок.',
+      items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
+      img: 'img/services/bur.jpg',
       iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
     },
     {
-      num: '04', title: 'Отопление дома',
-      desc: 'Газовые и электрические котлы, радиаторы, тёплый пол — проектирование и монтаж.',
-      items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Japanese_Electric_Water_Heater.jpg',
-      iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
+      num: '02', title: 'Ремонт и обслуживание септиков',
+      desc: 'Диагностика и ремонт септиков всех марок: компрессоры, эрлифты, поплавки. Выезд в день обращения.',
+      items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
+      img: 'img/services/septik.jpg',
+      iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
     },
     {
-      num: '05', title: 'Бурение и обустройство скважин',
-      desc: 'Бурение от 20 до 200 м, кессон, погружной насос, пуско-наладка. Анализ воды в подарок.',
-      items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
-      img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Drilling_for_water.jpg',
-      iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
+      num: '03', title: 'Дренажные работы',
+      desc: 'Отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
+      items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
+      img: 'img/services/podvedenie.jpg',
+      iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
+    },
+    {
+      num: '04', title: 'Монтаж септиков под ключ',
+      desc: 'Установка септиков любых марок и объёмов. Монтаж за 1 рабочий день, гарантия на работы 3 года.',
+      items: ['Все бренды и модели', 'Монтаж за 1 день', 'Гарантия 3 года'],
+      img: 'img/services/montaz.jpg',
+      iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
+    },
+    {
+      num: '05', title: 'Отопление дома',
+      desc: 'Газовые и электрические котлы, радиаторы, тёплый пол — проектирование и монтаж.',
+      items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
+      img: 'img/services/otoplenie.jpg',
+      iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
     },
   ];
 
@@ -415,14 +415,14 @@ function maskPhone(raw) {
         <form class="calc-form calc-step-anim" id="calcForm">
           <div class="calc-step-label">Шаг ${total} / ${total} · последний</div>
           <h3 class="calc-q">Получите персональное предложение</h3>
-          <p style="margin:-12px 0 8px;color:rgba(255,255,255,.65);font-size:14px">Оставьте ваши контакты и в течение 15 минут свяжемся с вами.</p>
+          <p style="margin:-12px 0 8px;color:var(--muted);font-size:14px">Оставьте ваши контакты и в течение 15 минут свяжемся с вами.</p>
           <div class="summary">${answerLabels()}</div>
           <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="calcName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
           <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="calcPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
           <button type="submit" class="submit-btn"${canSubmit ? '' : ' disabled'}>Получить предложение ${arrowSvg}</button>
           <label class="check-row">
             <input type="checkbox" id="calcAgree"${state.agree ? ' checked' : ''}/>
-            <span>Нажимая кнопку, я соглашаюсь с <a href="#">Политикой конфиденциальности</a> и даю согласие на <a href="#">обработку персональных данных</a>.</span>
+            <span>Нажимая кнопку, я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных.</span>
           </label>
           <div class="calc-foot" style="margin-top:auto">
             <button type="button" class="back" id="calcBack">${backSvg} Назад</button>
@@ -542,7 +542,7 @@ function maskPhone(raw) {
         <button type="submit" class="submit-btn"${canSubmit ? '' : ' disabled'}>Оставить заявку ${arrowSvg}</button>
         <label class="check-row">
           <input type="checkbox" id="ctAgree"${state.agree ? ' checked' : ''}/>
-          <span>Согласен с <a href="#">Политикой конфиденциальности</a> и обработкой персональных данных.</span>
+          <span>Согласен с Политикой конфиденциальности и обработкой персональных данных.</span>
         </label>
       </form>`;
 
@@ -653,7 +653,7 @@ function maskPhone(raw) {
         <button type="submit" class="submit-btn"${canSubmit ? '' : ' disabled'}>Отправить заявку ${arrowSvg}</button>
         <label class="check-row">
           <input type="checkbox" id="mAgree"${state.agree ? ' checked' : ''}/>
-          <span>Согласен с <a href="#">Политикой конфиденциальности</a> и обработкой персональных данных.</span>
+          <span>Согласен с Политикой конфиденциальности и обработкой персональных данных.</span>
         </label>
       </form>`;
 
