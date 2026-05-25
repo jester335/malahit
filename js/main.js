@@ -206,9 +206,9 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
       iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
     },
     {
-      num: '06', title: 'Электроснабжение участка',
-      img: 'img/services/otoplenie.jpg',
-      iconPath: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>',
+      num: '06', title: 'Водоподведение',
+      img: 'img/services/vodopodved.png',
+      iconPath: '<path d="M12 2C6 2 2 7 2 12c0 4.4 2.9 8.2 7 9.5V22h6v-.5c4.1-1.3 7-5.1 7-9.5 0-5-4-10-10-10Z"/><path d="M12 8v4l3 3"/>',
     },
   ];
 
