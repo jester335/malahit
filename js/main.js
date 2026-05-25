@@ -174,56 +174,48 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   applyTransform();
 }
 
-/* ── Services carousel ───────────────────────────────────────────── */
+/* ── Services grid ───────────────────────────────────────────────── */
 (function () {
-  const track = document.getElementById('svcTrack');
-  const prevBtn = document.getElementById('svcPrev');
-  const nextBtn = document.getElementById('svcNext');
-  if (!track || !prevBtn || !nextBtn) return;
+  const grid = document.getElementById('svcGrid');
+  if (!grid) return;
 
   const SERVICES = [
     {
-      num: '01', title: 'Бурение скважин/подведение в дом',
-      desc: 'Бурение от 20 до 200 м, кессон, насос и водопровод до дома под ключ. Анализ воды в подарок.',
-      items: ['Глубина от 20 до 200 м', 'Паспорт на скважину', 'Анализ воды в подарок'],
-      img: 'img/services/bur.jpg',
-      iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
-    },
-    {
-      num: '02', title: 'Ремонт и обслуживание септиков',
-      desc: 'Диагностика и ремонт септиков всех марок: компрессоры, эрлифты, поплавки. Выезд в день обращения.',
-      items: ['Выезд в день обращения', 'Все бренды и модели', 'Запчасти в наличии'],
-      img: 'img/services/septik.jpg',
-      iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
-    },
-    {
-      num: '03', title: 'Дренажные работы',
-      desc: 'Отвод грунтовых и ливневых вод от фундамента. Защита участка от затопления.',
-      items: ['Пластовый и пристенный дренаж', 'Ливнёвая канализация', 'Дренажные колодцы'],
-      img: 'img/services/podvedenie.jpg',
-      iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
-    },
-    {
-      num: '04', title: 'Монтаж септиков под ключ',
-      desc: 'Установка септиков любых марок и объёмов. Монтаж за 1 рабочий день, гарантия на работы 3 года.',
-      items: ['Все бренды и модели', 'Монтаж за 1 день', 'Гарантия 3 года'],
+      num: '01', title: 'Монтаж септиков под ключ',
       img: 'img/services/montaz.jpg',
       iconPath: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/>',
     },
     {
+      num: '02', title: 'Бурение скважин/подведение в дом',
+      img: 'img/services/bur.jpg',
+      iconPath: '<path d="M12 2c-3 4-6 7-6 12a6 6 0 0 0 12 0c0-5-3-8-6-12Z"/><path d="M9 16a3 3 0 0 0 3 2"/>',
+    },
+    {
+      num: '03', title: 'Дренажные работы',
+      img: 'img/services/podvedenie.jpg',
+      iconPath: '<path d="M12 3v6"/><path d="M9 6h6"/><path d="M5 12c2 1 4 1 7 1s5 0 7-1"/><path d="M4 16c2 1.5 5 1.5 8 1.5s6 0 8-1.5"/><path d="M3 20c2.5 1.5 6 1.5 9 1.5s6.5 0 9-1.5"/>',
+    },
+    {
+      num: '04', title: 'Ремонт и обслуживание септиков',
+      img: 'img/services/septik.jpg',
+      iconPath: '<path d="M12 2v8M10 4l2-2 2 2"/><rect x="8" y="10" width="8" height="4"/><path d="M10 14v8M14 14v8M12 14v8"/>',
+    },
+    {
       num: '05', title: 'Отопление дома',
-      desc: 'Газовые и электрические котлы, радиаторы, тёплый пол — проектирование и монтаж.',
-      items: ['Газовое и электро отопление', 'Тёплый пол', 'Обвязка котельной под ключ'],
       img: 'img/services/otoplenie.jpg',
       iconPath: '<path d="M8 2v20M12 2v20M16 2v20"/><rect x="5" y="6" width="14" height="12" rx="2"/>',
+    },
+    {
+      num: '06', title: 'Электроснабжение участка',
+      img: 'img/services/otoplenie.jpg',
+      iconPath: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/>',
     },
   ];
 
   const svgAttrs = 'width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
   const arrowSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
 
-  const triple = [...SERVICES, ...SERVICES, ...SERVICES];
-  track.innerHTML = triple.map((s) => `
+  grid.innerHTML = SERVICES.map((s) => `
     <article class="svc-card">
       <div class="svc-img">
         <img src="${s.img}" alt="${s.title}" loading="lazy" />
@@ -236,10 +228,41 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
       </div>
     </article>
   `).join('');
+})();
+
+/* ── Works carousel ──────────────────────────────────────────────── */
+(function () {
+  const track = document.getElementById('worksTrack');
+  const prevBtn = document.getElementById('worksPrev');
+  const nextBtn = document.getElementById('worksNext');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const WORKS = [
+    { img: 'img/where/1.jpg', label: 'Монтаж септика, Подмосковье' },
+    { img: 'img/where/2.jpg', label: 'Бурение скважины, СНТ' },
+    { img: 'img/where/3.jpg', label: 'Водоснабжение, база отдыха' },
+    { img: 'img/where/4.jpg', label: 'Септик под ключ, ресторан' },
+    { img: 'img/where/5.jpg', label: 'Дренаж участка, Москва' },
+    { img: 'img/where/6.jpg', label: 'Промышленный объект, МО' },
+    { img: 'img/services/bur.jpg', label: 'Бурение скважины 80 м' },
+    { img: 'img/services/septik.jpg', label: 'Установка Топас, Раменское' },
+  ];
+
+  const triple = [...WORKS, ...WORKS, ...WORKS];
+  track.innerHTML = triple.map((w) => `
+    <article class="work-card">
+      <div class="work-card-img">
+        <img src="${w.img}" alt="${w.label}" loading="lazy" />
+      </div>
+      <div class="work-card-body">
+        <p>${w.label}</p>
+      </div>
+    </article>
+  `).join('');
 
   makeCarousel(
-    track, prevBtn, nextBtn, SERVICES.length, 18,
-    () => window.innerWidth < 680 ? 1 : window.innerWidth < 1040 ? 2 : 3
+    track, prevBtn, nextBtn, WORKS.length, 18,
+    () => window.innerWidth < 640 ? 1 : window.innerWidth < 980 ? 2 : 3
   );
 })();
 
@@ -251,14 +274,11 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const BRANDS = [
-    { name: 'Топас 5',        people: '5 чел', power: '1 кВт·ч/сут',      deep: '2.5 м', from: 109900, hit: true,  img: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Cabin_in_the_woods_%2842635966932%29.jpg' },
-    { name: 'Юнилос Астра 5', people: '5 чел', power: '0.8 кВт·ч/сут',    deep: '2.4 м', from: 98500,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Garden_with_apples_in_Kosa.jpg' },
-    { name: 'Евробион 5',     people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.6 м', from: 104000, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Onshore_drilling_rig.jpg' },
-    { name: 'Тверь 0.5',      people: '3 чел', power: '0.6 кВт·ч/сут',    deep: '2.2 м', from: 87900,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Russian_izba_house.JPG' },
-    { name: 'Тополь 6',       people: '6 чел', power: '1.1 кВт·ч/сут',    deep: '2.6 м', from: 118500, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/4/40/House_and_yard_near_Mokry_Chaltyr_River.jpg' },
-    { name: 'Танк Универсал', people: '4 чел', power: 'энергонезависимый', deep: '2.4 м', from: 73900,  hit: true,  img: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Drilling_for_water.jpg' },
-    { name: 'Дека СБО',       people: '5 чел', power: '0.9 кВт·ч/сут',    deep: '2.5 м', from: 99200,  hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Drainage_Ditch_in_Fox_River_Grove%2C_Illinois.jpg' },
-    { name: 'BioDeka 5',      people: '5 чел', power: '0.85 кВт·ч/сут',   deep: '2.4 м', from: 105800, hit: false, img: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Cast-iron_plumbing_pipe.jpg' },
+    { name: 'Септик АОС МАЛАХИТ 4 ПР (насос в комплекте)',           price: 145000, img: 'img/septiki/Септик АОС МАЛАХИТ 4 ПР (насос в комплекте).webp' },
+    { name: 'Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте)',       price: 118000, img: 'img/septiki/Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте).webp' },
+    { name: 'Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320)', price: 165000, img: 'img/septiki/Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320).webp' },
+    { name: 'Септик АОС МАЛАХИТ НЕРО 3',                              price: 140000, img: 'img/septiki/Септик АОС МАЛАХИТ НЕРО 3.webp' },
+    { name: 'Септик АОС МАЛАХИТ 15 ПР (насос в комплекте)',           price: 355000, img: 'img/septiki/Септик АОС МАЛАХИТ 15 ПР (насос в комплекте).webp' },
   ];
 
   const fmt = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -267,12 +287,11 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
     <article class="brand-card">
       <div class="brand-img">
         <img src="${b.img}" alt="${b.name}" loading="lazy" />
-        ${b.hit ? '<span class="pill hit">Хит</span>' : '<span class="pill">Дилер</span>'}
       </div>
       <div class="brand-card-body">
         <h3>${b.name}</h3>
         <div class="brand-foot">
-          <div class="price-blk"><small>от</small><b>${fmt(b.from)}</b></div>
+          <div class="price-blk"><b>${fmt(b.price)}</b></div>
           <button class="order" data-modal="contact">Заявка</button>
         </div>
       </div>
@@ -703,5 +722,22 @@ function maskPhone(raw) {
     if (!el) return;
     e.preventDefault();
     openModal();
+  });
+})();
+
+/* ── Cookie banner ──────────────────────────────────────────────── */
+(function () {
+  const banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+  if (!localStorage.getItem('cookieConsent')) {
+    banner.hidden = false;
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function () {
+    localStorage.setItem('cookieConsent', 'all');
+    banner.hidden = true;
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function () {
+    localStorage.setItem('cookieConsent', 'necessary');
+    banner.hidden = true;
   });
 })();
