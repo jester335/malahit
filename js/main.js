@@ -238,14 +238,9 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const WORKS = [
-    { img: 'img/where/1.jpg', label: 'Монтаж септика, Подмосковье' },
-    { img: 'img/where/2.jpg', label: 'Бурение скважины, СНТ' },
-    { img: 'img/where/3.jpg', label: 'Водоснабжение, база отдыха' },
-    { img: 'img/where/4.jpg', label: 'Септик под ключ, ресторан' },
-    { img: 'img/where/5.jpg', label: 'Дренаж участка, Москва' },
-    { img: 'img/where/6.jpg', label: 'Промышленный объект, МО' },
-    { img: 'img/services/bur.jpg', label: 'Бурение скважины 80 м' },
-    { img: 'img/services/septik.jpg', label: 'Установка Топас, Раменское' },
+    { img: 'img/works/pushkino.png', label: 'Монтаж септика в Пушкино' },
+    { img: 'img/works/dmitrov.png',  label: 'Дренажные работы + септик в Дмитрове' },
+    { img: 'img/works/podolsk.png',  label: 'Бурение скважины в Подольске' },
   ];
 
   const triple = [...WORKS, ...WORKS, ...WORKS];
