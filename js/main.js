@@ -207,7 +207,7 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
     },
     {
       num: '06', title: 'Водоподведение',
-      img: 'img/services/vodopodved.png',
+      img: 'img/services/vodopodved.jpg',
       iconPath: '<path d="M12 2C6 2 2 7 2 12c0 4.4 2.9 8.2 7 9.5V22h6v-.5c4.1-1.3 7-5.1 7-9.5 0-5-4-10-10-10Z"/><path d="M12 8v4l3 3"/>',
     },
   ];
@@ -238,9 +238,9 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const WORKS = [
-    { img: 'img/works/pushkino.png', label: 'Монтаж септика в Пушкино' },
-    { img: 'img/works/dmitrov.png',  label: 'Дренажные работы + септик в Дмитрове' },
-    { img: 'img/works/podolsk.png',  label: 'Бурение скважины в Подольске' },
+    { img: 'img/works/pushkino.jpg', label: 'Монтаж септика в Пушкино' },
+    { img: 'img/works/dmitrov.jpg',  label: 'Дренажные работы + септик в Дмитрове' },
+    { img: 'img/works/podolsk.jpg',  label: 'Бурение скважины в Подольске' },
   ];
 
   const triple = [...WORKS, ...WORKS, ...WORKS];
@@ -269,11 +269,11 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const BRANDS = [
-    { name: 'Септик АОС МАЛАХИТ 4 ПР (насос в комплекте)',           price: 145000, img: 'img/septiki/Септик АОС МАЛАХИТ 4 ПР (насос в комплекте).webp' },
-    { name: 'Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте)',       price: 118000, img: 'img/septiki/Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте).webp' },
-    { name: 'Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320)', price: 165000, img: 'img/septiki/Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320).webp' },
-    { name: 'Септик АОС МАЛАХИТ НЕРО 3',                              price: 140000, img: 'img/septiki/Септик АОС МАЛАХИТ НЕРО 3.webp' },
-    { name: 'Септик АОС МАЛАХИТ 15 ПР (насос в комплекте)',           price: 355000, img: 'img/septiki/Септик АОС МАЛАХИТ 15 ПР (насос в комплекте).webp' },
+    { name: 'Септик АОС МАЛАХИТ 4 ПР (насос в комплекте)',           price: 145000, img: 'img/septiki/malachit-4pr.webp' },
+    { name: 'Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте)',       price: 118000, img: 'img/septiki/malachit-air-3pr.webp' },
+    { name: 'Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320)', price: 165000, img: 'img/septiki/malachit-geo-3pr.webp' },
+    { name: 'Септик АОС МАЛАХИТ НЕРО 3',                              price: 140000, img: 'img/septiki/malachit-nero-3.webp' },
+    { name: 'Септик АОС МАЛАХИТ 15 ПР (насос в комплекте)',           price: 355000, img: 'img/septiki/malachit-15pr.webp' },
   ];
 
   const fmt = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
