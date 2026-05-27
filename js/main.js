@@ -269,11 +269,71 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
   if (!track || !prevBtn || !nextBtn) return;
 
   const BRANDS = [
-    { name: 'Септик АОС МАЛАХИТ 4 ПР (насос в комплекте)',           price: 145000, img: 'img/septiki/malachit-4pr.webp' },
-    { name: 'Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте)',       price: 118000, img: 'img/septiki/malachit-air-3pr.webp' },
-    { name: 'Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320)', price: 165000, img: 'img/septiki/malachit-geo-3pr.webp' },
-    { name: 'Септик АОС МАЛАХИТ НЕРО 3',                              price: 140000, img: 'img/septiki/malachit-nero-3.webp' },
-    { name: 'Септик АОС МАЛАХИТ 15 ПР (насос в комплекте)',           price: 355000, img: 'img/septiki/malachit-15pr.webp' },
+    {
+      name: 'Септик АОС МАЛАХИТ 4 ПР (насос в комплекте)',
+      price: 145000, img: 'img/septiki/malachit-4pr.webp',
+      specs: [
+        ['Производительность', '0.8 м³/сут'],
+        ['Количество человек', '4'],
+        ['Степень очистки', '98%'],
+        ['Глубина врезки', '700 мм'],
+        ['Потребляемая мощность', '1.5 кВт·ч/сут'],
+        ['Насос', 'в комплекте'],
+        ['Гарантия', '10 лет'],
+      ],
+    },
+    {
+      name: 'Септик АОС МАЛАХИТ АИР 3 ПР (насос в комплекте)',
+      price: 118000, img: 'img/septiki/malachit-air-3pr.webp',
+      specs: [
+        ['Производительность', '0.6 м³/сут'],
+        ['Количество человек', '3'],
+        ['Степень очистки', '98%'],
+        ['Глубина врезки', '700 мм'],
+        ['Потребляемая мощность', '1.2 кВт·ч/сут'],
+        ['Насос', 'в комплекте'],
+        ['Гарантия', '10 лет'],
+      ],
+    },
+    {
+      name: 'Септик АОС МАЛАХИТ ГЕО 3 ПР (высота 1300, врезка 320)',
+      price: 165000, img: 'img/septiki/malachit-geo-3pr.webp',
+      specs: [
+        ['Производительность', '0.6 м³/сут'],
+        ['Количество человек', '3'],
+        ['Степень очистки', '98%'],
+        ['Высота корпуса', '1300 мм'],
+        ['Глубина врезки', '320 мм'],
+        ['Потребляемая мощность', '1.2 кВт·ч/сут'],
+        ['Гарантия', '10 лет'],
+      ],
+    },
+    {
+      name: 'Септик АОС МАЛАХИТ НЕРО 3',
+      price: 140000, img: 'img/septiki/malachit-nero-3.webp',
+      specs: [
+        ['Производительность', '0.6 м³/сут'],
+        ['Количество человек', '3'],
+        ['Степень очистки', '98%'],
+        ['Глубина врезки', '700 мм'],
+        ['Потребляемая мощность', '1.2 кВт·ч/сут'],
+        ['Серия', 'НЕРО'],
+        ['Гарантия', '10 лет'],
+      ],
+    },
+    {
+      name: 'Септик АОС МАЛАХИТ 15 ПР (насос в комплекте)',
+      price: 355000, img: 'img/septiki/malachit-15pr.webp',
+      specs: [
+        ['Производительность', '3.0 м³/сут'],
+        ['Количество человек', '15'],
+        ['Степень очистки', '98%'],
+        ['Глубина врезки', '700 мм'],
+        ['Потребляемая мощность', '3.5 кВт·ч/сут'],
+        ['Насос', 'в комплекте'],
+        ['Гарантия', '10 лет'],
+      ],
+    },
   ];
 
   const fmt = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
@@ -287,11 +347,27 @@ function makeCarousel(track, prevBtn, nextBtn, N, GAP, getPerPage) {
         <h3>${b.name}</h3>
         <div class="brand-foot">
           <div class="price-blk"><b>${fmt(b.price)}</b></div>
-          <button class="order" data-modal="contact">Заявка</button>
+          <button class="specs-btn" data-brand="${b.name}">Характеристики</button>
         </div>
       </div>
     </article>
   `).join('');
+
+  track.addEventListener('click', function (e) {
+    const btn = e.target.closest('.specs-btn');
+    if (!btn) return;
+    const brand = BRANDS.find((b) => b.name === btn.dataset.brand);
+    if (!brand) return;
+    document.getElementById('specsModalTitle').textContent = brand.name;
+    document.getElementById('specsModalPrice').textContent = fmt(brand.price);
+    document.getElementById('specsModalImg').src = brand.img;
+    document.getElementById('specsModalImg').alt = brand.name;
+    document.getElementById('specsModalTable').innerHTML = brand.specs
+      .map(([k, v]) => '<tr><td>' + k + '</td><td>' + v + '</td></tr>').join('');
+    const modal = document.getElementById('specsModal');
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
 
   makeCarousel(
     track, prevBtn, nextBtn, BRANDS.length, 18,
@@ -548,7 +624,7 @@ function maskPhone(raw) {
         <div class="form-head">
           <span class="calc-step-label">Форма заявки</span>
           <h3 class="calc-q" style="margin-top:8px">Оставьте заявку</h3>
-          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут, подберём решение и&nbsp;бесплатно выедем на замер.</p>
+          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут и рассчитаем стоимость услуги со скидкой.</p>
         </div>
         <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="ctName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
         <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="ctPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
@@ -660,7 +736,7 @@ function maskPhone(raw) {
         <div class="form-head">
           <span class="calc-step-label">Форма заявки</span>
           <h3 class="calc-q" style="margin-top:8px">Оставьте заявку</h3>
-          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут и&nbsp;бесплатно выедем на&nbsp;замер.</p>
+          <p style="margin:0;font-size:14px;color:var(--ink-2)">Перезвоним в течение 15 минут и рассчитаем стоимость услуги со скидкой.</p>
         </div>
         <input type="text" class="calc-input${state.touched.name && !nameOk ? ' has-error' : ''}" id="mName" placeholder="Ваше имя" value="${state.name.replace(/"/g, '&quot;')}"/>
         <input type="tel" class="calc-input${state.touched.phone && !phoneOk ? ' has-error' : ''}" id="mPhone" placeholder="+7 (___) ___-__-__" value="${state.phone}"/>
@@ -718,6 +794,22 @@ function maskPhone(raw) {
     e.preventDefault();
     openModal();
   });
+})();
+
+/* ── Specs modal close ───────────────────────────────────────────── */
+(function () {
+  const modal = document.getElementById('specsModal');
+  if (!modal) return;
+  function closeSpecs() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  document.getElementById('specsModalClose').addEventListener('click', closeSpecs);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeSpecs();
+    if (e.target.closest('.specs-modal-cta')) closeSpecs();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeSpecs(); });
 })();
 
 /* ── Cookie banner ──────────────────────────────────────────────── */
