@@ -812,6 +812,38 @@ function maskPhone(raw) {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeSpecs(); });
 })();
 
+/* ── Mobile nav burger ──────────────────────────────────────────── */
+(function () {
+  const burger = document.getElementById('navBurger');
+  const drawer = document.getElementById('navDrawer');
+  if (!burger || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    burger.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function () {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  drawer.querySelectorAll('a, button').forEach(function (el) {
+    el.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+})();
+
 /* ── Cookie banner ──────────────────────────────────────────────── */
 (function () {
   const banner = document.getElementById('cookieBanner');

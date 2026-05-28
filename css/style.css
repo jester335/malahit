@@ -3273,3 +3273,376 @@ section.tight {
 }
 .about-quote-box--green { background: var(--primary); }
 .about-quote-box--blue { background: oklch(0.38 0.12 230); }
+
+/* ═══════════════════════════════════════════════════════════════
+   БУРГЕР-МЕНЮ + МОБИЛЬНЫЙ АДАПТИВ
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Burger button ── */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background var(--dur-fast);
+  flex-shrink: 0;
+}
+.nav-burger:hover { background: var(--bg-2); }
+.nav-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s var(--ease), opacity .2s;
+}
+.nav-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1080px) {
+  .nav-burger { display: flex; }
+}
+
+/* ── Mobile drawer ── */
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(76px, 10vw, 96px) clamp(20px, 6vw, 48px) 32px;
+  transform: translateX(100%);
+  transition: transform .32s var(--ease);
+  overflow-y: auto;
+}
+.nav-drawer.is-open { transform: translateX(0); }
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.drawer-links a {
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 600;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color var(--dur-fast), padding-left var(--dur-fast);
+}
+.drawer-links a:hover {
+  color: var(--primary);
+  padding-left: 6px;
+}
+
+.drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.drawer-close:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.drawer-foot {
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.drawer-foot .nav-phone {
+  font-size: 18px;
+  color: var(--ink);
+}
+.drawer-foot .btn { height: 52px; font-size: 15px; justify-content: center; }
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE FIXES 320 – 768px (детальные)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. Hero: float-cards не выходят за границы на планшете ── */
+@media (max-width: 880px) {
+  .fc-1 { left: 2%; }
+  .fc-2 { right: 2%; }
+}
+
+/* Уменьшаем плашки на 640px */
+@media (max-width: 640px) {
+  .float-card { padding: 8px 10px; font-size: 11px; gap: 7px; border-radius: 10px; }
+  .float-card b { font-size: 12px; }
+  .float-card small { font-size: 10px; }
+  .float-card .ico { width: 24px; height: 24px; }
+}
+
+/* Скрываем плашки на мобиле */
+@media (max-width: 640px) {
+  .hero-visual .float-card { display: none !important; }
+}
+
+/* ── Hero CTA стекируются ── */
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+}
+
+/* ── 3 & 9. Specs modal: отступы от краёв ── */
+@media (max-width: 600px) {
+  .specs-modal-overlay { padding: 12px; }
+}
+@media (max-width: 380px) {
+  .specs-modal-overlay { padding: 8px; }
+  .specs-modal-info { padding: 16px 14px 20px; gap: 10px; }
+  .specs-modal-info h3 { font-size: 14px; }
+  .specs-table { font-size: 12px; }
+  .specs-table td { padding: 7px 0; }
+  .specs-modal-price { font-size: 22px !important; }
+  .specs-modal-cta { height: 44px !important; font-size: 14px; }
+}
+
+/* ── 4. Brand-cards меньше на 425px ── */
+@media (max-width: 480px) {
+  .brand-track { grid-auto-columns: minmax(200px, 1fr); }
+}
+@media (max-width: 380px) {
+  .brand-track { grid-auto-columns: minmax(170px, 1fr); }
+  .brand-card-body { padding: 14px 14px 16px; }
+}
+
+/* ── 8. Brand-controls кнопки ── */
+@media (max-width: 380px) {
+  .brand-arrow { width: 36px; height: 36px; }
+  .brand-controls { gap: 6px; }
+}
+
+/* ── Trust row 1-col ── */
+@media (max-width: 360px) {
+  .trust-row { grid-template-columns: 1fr; }
+}
+
+/* ── Brand card footer — wrap ── */
+@media (max-width: 360px) {
+  .brand-card .brand-foot { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ── 5. Footer 1-col и центрование на мобиле ── */
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-grid > div:first-child { margin-bottom: 4px; }
+  .footer-social { justify-content: center; }
+  .footer-bot { flex-direction: column; gap: 6px; text-align: center; justify-content: center; }
+  .footer .logo { align-items: center; }
+  .footer .logo-top { justify-content: center; }
+  .footer ul { align-items: center; }
+}
+
+/* ── Cookie banner на мобиле ── */
+@media (max-width: 600px) {
+  .cookie-banner { bottom: 12px; }
+  .cookie-banner-inner { flex-direction: column; gap: 14px; }
+  .cookie-actions { width: 100%; display: flex; gap: 10px; }
+  .cookie-actions .btn-accent,
+  .cookie-decline { flex: 1; min-width: 0; }
+}
+
+/* ── About 2-col hero video ── */
+@media (max-width: 640px) {
+  .about-hero-box { min-height: auto; }
+  .about-video-wrap { min-height: 200px; }
+}
+
+/* ── Process steps ── */
+@media (max-width: 480px) {
+  .proc-step { padding: 0 8px; }
+}
+
+/* ── Where grid ── */
+@media (max-width: 360px) {
+  .where-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ════════════════════════════════
+   РАЗМЕР 320px — детальные фиксы
+   ════════════════════════════════ */
+
+/* ── 2. Скрыть кнопку Заявка в шапке на 375px ── */
+@media (max-width: 375px) {
+  .nav-cta .btn { display: none; }
+}
+
+/* ── Стили для контактов в drawer ── */
+.drawer-contacts {
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.drawer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink-2);
+  font-size: 15px;
+  transition: color var(--dur-fast);
+}
+.drawer-contact-item:hover { color: var(--primary); }
+.drawer-contact-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ink-2);
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.drawer-contact-item:hover .drawer-contact-ico {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.drawer-contact-ico--tg { background: #2AABEE; border-color: #2AABEE; color: #fff; }
+.drawer-contact-ico--tg:hover { background: #1e96d6; }
+
+/* ── 4. Квиз на 375px ── */
+@media (max-width: 375px) {
+  .calc-q { font-size: 16px !important; }
+  .calc-side h2 { font-size: 18px !important; }
+  .calc-side p { font-size: 13px; }
+  .calc-pros li { font-size: 12px; }
+  .calc-opt { font-size: 12px; padding: 10px 8px; }
+  .calc-form .calc-input { font-size: 13px; padding: 10px 12px; }
+  .calc-form .submit-btn { font-size: 13px; padding: 13px; }
+  .calc-form .check-row { font-size: 11px; }
+  .calc-step-label { font-size: 9px; }
+}
+
+/* ── 5. Навигация: сохраняем подпись, уменьшаем элементы ── */
+@media (max-width: 400px) {
+  .logo-sub { display: block !important; font-size: 7px; letter-spacing: 0.01em; }
+  .logo-name { font-size: 30px; }
+  .nav-cta .btn { padding: 0 12px; font-size: 13px; height: 40px; }
+}
+/* На 360px скрываем подпись логотипа и сжимаем nav, чтобы бургер не обрезался */
+@media (max-width: 360px) {
+  .logo-sub { display: none !important; }
+  .logo-name { font-size: 26px; }
+  .logo-mark { width: 28px; height: 28px; }
+  .nav { padding: 12px 12px; gap: 8px; }
+  .nav-cta { gap: 6px; }
+  .nav-burger { width: 36px; height: 36px; }
+}
+
+/* ── 6. Квиз на 320px ── */
+@media (max-width: 380px) {
+  .calc { padding: 20px 16px !important; border-radius: 16px; }
+  .calc-q { font-size: 18px !important; margin-bottom: 16px; }
+  .calc-step-label { font-size: 10px; }
+  .calc-opts { gap: 8px; }
+  .calc-opt { padding: 12px 10px; font-size: 13px; }
+  .calc-opt .ico-l { width: 28px; height: 28px; border-radius: 7px; }
+  .calc-form .calc-input { padding: 12px; font-size: 14px; }
+  .calc-form .submit-btn { padding: 14px; font-size: 14px; }
+  .calc-form .check-row { font-size: 12px; gap: 8px; }
+  .calc-progress { gap: 4px; }
+}
+
+/* ── 7. Модалка заявки на 320px ── */
+@media (max-width: 380px) {
+  .modal-overlay { padding: 10px; }
+  .modal-box { border-radius: 16px; }
+}
+
+/* ── 10. Блок Контакты/форма на 320px ── */
+@media (max-width: 380px) {
+  .contact-grid { padding: 20px 16px; border-radius: 16px; }
+  .contact-left h2 { font-size: 22px !important; }
+  .contact-left .lead { font-size: 13px; }
+  .contact-info-item b { font-size: 15px; }
+  .contact-info-item .ico { width: 34px; height: 34px; }
+}
+
+/* ═════════════════════════════════════════════════════
+   ДОП. ФИКСЫ ДЛЯ 320–375px (детальный проход)
+   ═════════════════════════════════════════════════════ */
+
+/* Drawer: overflow и шрифты */
+.nav-drawer { overflow-x: hidden; }
+.drawer-contact-item { word-break: break-all; }
+
+@media (max-width: 375px) {
+  .nav-drawer { padding-left: 16px; padding-right: 16px; }
+  .drawer-links a { font-size: clamp(17px, 5vw, 22px); padding: 11px 0; }
+  .drawer-contact-item { font-size: 13px; gap: 10px; }
+  .drawer-contact-ico { width: 30px; height: 30px; flex-shrink: 0; }
+  .drawer-foot .btn { font-size: 14px !important; height: 46px; }
+}
+
+/* Quiz: уменьшаем список и кнопку */
+@media (max-width: 375px) {
+  .calc-pros { margin-top: 14px; gap: 10px; }
+  .calc-pros li { font-size: 12px; gap: 8px; }
+  .calc-pros .check { width: 15px; height: 15px; flex-shrink: 0; }
+  .calc-form .submit-btn { font-size: 12px; padding: 12px 8px; }
+  .calc-reset-btn { font-size: 13px; padding: 12px; }
+}
+
+/* Модалка заявки — не выходит за экран */
+@media (max-width: 380px) {
+  .modal-overlay { padding: 8px; }
+  .modal-box { max-width: calc(100vw - 16px); border-radius: 14px; }
+}
+
+/* Блок Септики: кнопки под заголовком */
+@media (max-width: 480px) {
+  .sec-head > div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* Specs modal — не выходит за экран */
+@media (max-width: 380px) {
+  .specs-modal-overlay { padding: 6px; }
+  .specs-modal { max-width: calc(100vw - 12px); border-radius: 16px; }
+  .specs-modal-img-wrap { min-height: 180px; padding: 16px; }
+  .specs-modal-info { padding: 12px 12px 16px; gap: 8px; }
+  .specs-modal-info h3 { font-size: 13px; padding-right: 24px; }
+  .specs-modal-price { font-size: 20px !important; }
+  .specs-table td { font-size: 11px; word-break: break-word; }
+  .specs-table td:first-child { max-width: 110px; }
+  .specs-modal-cta { height: 42px !important; font-size: 13px; }
+  .specs-modal-close { width: 30px; height: 30px; top: 10px; right: 10px; }
+}
